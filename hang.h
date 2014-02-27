@@ -8,7 +8,7 @@
 using namespace std;
 
 void drawhangman(int wrong);
-string* loadwords();
 string genword(string*);
+//void playgame(string);
 
 #endif

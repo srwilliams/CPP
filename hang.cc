@@ -4,6 +4,7 @@
 #include <cstring>
 #include <ctime>
 #include "hang.h"
+#include <vector>
 using namespace std;
 
 string gallows1 = " --------\n   |    |";
@@ -86,27 +87,7 @@ void drawhangman(int wrong) {
         cout << gallows1 << endl << gallows2 << a << gallows3 << b << c << d << gallows4 << e << gallows5 << f << " " << g << gallows6 << endl;
 }
 
-string* loadwords() {
-		string* pointer;
-		string wordslist[11]; // creates array to hold names
-		pointer = wordslist;
-		int loop=0; //short for loop for input
-		string line; //this will contain the data read from the file
-		ifstream myfile ("words1.txt"); //opening the file.
-		if (myfile.is_open()) //if the file is open
-		{
-		    while (! myfile.eof() ) //while the end of file is NOT reached
-		    {
-		        getline (myfile,line); //get one line from the file
-		        wordslist[loop] = line;
-		        loop++;
-		    }
-		    myfile.close(); //closing the file
-		}
-		else cout << "Unable to open file"; //if the file is not open output
-	return pointer;
-}
-
+//////////////////////////////////////////////////////////////////
 
 string genword(string* pointer) {
 	srand(static_cast<unsigned int>(time(NULL)));
@@ -116,3 +97,8 @@ string genword(string* pointer) {
 	cout<< secretword <<endl;
 	return secretword;
 }
+
+///////////////////////////////////////////////////////////////////
+//void playgame(string secretword) {
+//	vector<char> answer;
+	
