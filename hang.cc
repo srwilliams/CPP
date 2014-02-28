@@ -5,7 +5,11 @@
 #include <ctime>
 #include "hang.h"
 #include <vector>
+#include <algorithm>
+#include <cctype>
 using namespace std;
+
+vector<string> words;
 
 string gallows1 = " --------\n   |    |";
 string gallows2 = "   |    ";
@@ -89,16 +93,16 @@ void drawhangman(int wrong) {
 
 //////////////////////////////////////////////////////////////////
 
-string genword(string* pointer) {
-	srand(static_cast<unsigned int>(time(NULL)));
-	int num = abs(rand()) % (1509 +1);
-	string secretword;
-	*(pointer + num) = secretword;
-	cout<< secretword <<endl;
-	return secretword;
+string getplayerguess() {
+	char guess;
+	cout << "\n\nEnter your guess (only one letter please): ";
+	cin >> guess;
+	guess = toupper(guess);
+	cout<< guess<<endl;
+	return guess;
 }
 
-///////////////////////////////////////////////////////////////////
+
 //void playgame(string secretword) {
 //	vector<char> answer;
 	
