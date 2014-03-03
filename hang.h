@@ -9,7 +9,7 @@ using namespace std;
 
 void drawhangman(int wrong);
 string genword(vector<string> words);
-string getplayerguess();
+//string getplayerguess();
 //void playgame(string);
 
 #endif

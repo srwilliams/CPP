@@ -1,15 +1,9 @@
 #include <iostream>
-#include <fstream>
 #include <cstdlib>
-#include <cstring>
-#include <ctime>
-#include "hang.h"
-#include <vector>
-#include <algorithm>
-#include <cctype>
-using namespace std;
 
-vector<string> words;
+#include "hang.h"
+
+using namespace std;
 
 string gallows1 = " --------\n   |    |";
 string gallows2 = "   |    ";
@@ -18,24 +12,21 @@ string gallows4 = "\n   |    ";
 string gallows5 = "\n   |   ";
 string gallows6 = "\n   |\n   |\n___|____\n";
 
-
-const char Sp = ' ';
-char a = Sp;
-char b = Sp;
-char c = Sp;
-char d = Sp;
-char e = Sp;
-char f = Sp;
-char g = Sp;
-int wrong = 0;
-
 void drawhangman(int wrong) {
-		if (wrong ==1) {
-			a='0';
-		}
-		else if (wrong ==2) {
-			a='0';
-			b='/';
+	const char Sp = ' ';
+	char a = Sp;
+	char b = Sp;
+	char c = Sp;
+	char d = Sp;
+	char e = Sp;
+	char f = Sp;
+	char g = Sp;
+	if (wrong ==1) {
+		a='0';
+	}
+	else if (wrong ==2) {
+		a='0';
+		b='/';
 
         }
         else if (wrong ==3) {
@@ -78,31 +69,8 @@ void drawhangman(int wrong) {
             f='/';
             g='\\';
         }
-        else {
-            const char Sp = ' ';
-			char a = Sp;
-			char b = Sp;
-			char c = Sp;
-			char d = Sp;
-			char e = Sp;
-			char f = Sp;
-			char g = Sp; 
-        }
+	else {
+	}
         cout << gallows1 << endl << gallows2 << a << gallows3 << b << c << d << gallows4 << e << gallows5 << f << " " << g << gallows6 << endl;
 }
-
-//////////////////////////////////////////////////////////////////
-
-string getplayerguess() {
-	char guess;
-	cout << "\n\nEnter your guess (only one letter please): ";
-	cin >> guess;
-	guess = toupper(guess);
-	cout<< guess<<endl;
-	return guess;
-}
-
-
-//void playgame(string secretword) {
-//	vector<char> answer;
 	
